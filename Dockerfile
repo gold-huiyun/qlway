@@ -48,4 +48,4 @@ RUN set -x \
     && git clone -b ${QL_BRANCH} https://github.com/${QL_MAINTAINER}/qinglong-static.git /static \
     && cp -rf /static/* ${QL_DIR} \
     && rm -rf /static
-ENTRYPOINT ["./ql/docker/docker-entrypoint.sh"]
+ENTRYPOINT ["./docker/docker-entrypoint.sh"]
