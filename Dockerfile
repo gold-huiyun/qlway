@@ -47,5 +47,7 @@ RUN set -x \
     && rm -rf /root/.pnpm-store \
     && git clone -b ${QL_BRANCH} https://github.com/${QL_MAINTAINER}/qinglong-static.git /static \
     && cp -rf /static/* ${QL_DIR} \
-    && rm -rf /static
-ENTRYPOINT ["./docker/docker-entrypoint.sh"]
+    && rm -rf /static \
+    && wget -O https://raw.githubusercontent.com/gold-huiyun/qlway/main/docker-entrypoint.sh \
+    && wget -O https://raw.githubusercontent.com/gold-huiyun/qlway/main/front.conf
+ENTRYPOINT ["./docker-entrypoint.sh"]
